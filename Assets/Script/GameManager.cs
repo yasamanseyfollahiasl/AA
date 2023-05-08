@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public BigCircle BigCircle;
     public PinSpawner PinSpawner;
     public List<Pin> Pins = new List<Pin>();
+    public int PinsCountToShoot;
+    public bool IsGameFinished;
    public GameManager()
    {
     Instance = this;
@@ -18,18 +20,26 @@ public class GameManager : MonoBehaviour
 
    public void LoseGame()
    {
+   SetThinsOff();
    Animator.SetTrigger("GameOver");
-   BigCircle.enabled = false;
-   PinSpawner.enabled = false;
-   for (int i = 0; i < Pins.Count; i++)
-   {
-      Pins[i].enabled = false;
-   }
+   
 
    }
 
    public void WinGame()
    {
+   SetThinsOff();
+   Animator.SetTrigger("WinGame");
+   }
+
+
+
+   void SetThinsOff()
+   {
+   BigCircle.enabled = false;
+   PinSpawner.enabled = false;
+   for (int i = 0; i < Pins.Count; i++)
+   Pins[i].enabled = false;
    
    }
 }
