@@ -11,7 +11,8 @@ public class PinSpawner : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-        Instantiate(PinPrefab,transform.position,transform.rotation);
+        GameObject pin = Instantiate(PinPrefab,transform.position,transform.rotation);
+        GameManager.Instance.Pins.Add(pin.GetComponent<Pin>());
         }
     }
 }

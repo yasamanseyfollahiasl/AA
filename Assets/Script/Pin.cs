@@ -5,17 +5,23 @@ using UnityEngine;
 public class Pin : MonoBehaviour
 {
     public Rigidbody2D Rb;
-    public float Speed = 100;
+    public float Speed = 60;
+    public SpriteRenderer SpriteRenderer;
+    bool _isArrived;
     
-    void Update()
+    void FixedUpdate()
     {
-        Rb.MovePosition(Rb.position + Vector2.up * Speed * Time.deltaTime);
+    if (!_isArrived)
+    {
+        Rb.MovePosition(Rb.position + Vector2.up * Speed * Time.fixedDeltaTime);
+        }
     }
      
     void OnTriggerEnter2D(Collider2D other)
      {
         if (other.CompareTag("BigCircle"))
         {
+            SpriteRenderer.enabled = true;
             transform.SetParent(other.transform);
         }
 

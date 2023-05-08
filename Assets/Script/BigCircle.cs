@@ -8,5 +8,6 @@ public class BigCircle : MonoBehaviour
     void Update()
     {
         transform.Rotate(0,0, Speed * Time.deltaTime);
+        
     }
 }

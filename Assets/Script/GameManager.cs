@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Animator Animator;
     public BigCircle BigCircle;
     public PinSpawner PinSpawner;
+    public List<Pin> Pins = new List<Pin>();
    public GameManager()
    {
     Instance = this;
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
    Animator.SetTrigger("GameOver");
    BigCircle.enabled = false;
    PinSpawner.enabled = false;
+   for (int i = 0; i < Pins.Count; i++)
+   {
+      Pins[i].enabled = false;
+   }
 
    }
 
