@@ -9,4 +9,10 @@ public class AnimationEvent : MonoBehaviour
    {
    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
    } 
+
+   public void SavePlayer()
+   {
+    PlayerPrefs.SetInt("OurLevel",SceneManager.GetActiveScene().buildIndex +1);
+    SceneManager.LoadSceneAsync(0);
+   }
 }

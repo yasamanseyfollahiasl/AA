@@ -826,8 +826,9 @@ MonoBehaviour:
   BigCircle: {fileID: 227614059}
   PinSpawner: {fileID: 49308635}
   Pins: []
-  PinsCountToShoot: 20
+  PinsCountToShoot: 10
   IsGameFinished: 0
+  MultipleSpeed: 1
 --- !u!4 &1615063650
 Transform:
   m_ObjectHideFlags: 0

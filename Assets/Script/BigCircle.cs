@@ -7,6 +7,10 @@ public class BigCircle : MonoBehaviour
 {
    public float Speed =100;
    public TMP_Text Text;
+   private void Start()
+    {
+        UpdateText();  
+    }
     void Update()
     {
         transform.Rotate(0,0, Speed * Time.deltaTime);
