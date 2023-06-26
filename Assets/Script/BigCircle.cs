@@ -17,4 +17,10 @@ public class BigCircle : MonoBehaviour
     {
     Text.text = (GameManager.Instance.PinsCountToShoot - GameManager.Instance.Pins.Count).ToString();
     }
+
+    public void AddSpeed()
+    {
+    Speed *= GameManager.Instance.MultipleSpeed;
+    
+    }
 }

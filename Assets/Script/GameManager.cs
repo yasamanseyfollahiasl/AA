@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public List<Pin> Pins = new List<Pin>();
     public int PinsCountToShoot;
     public bool IsGameFinished;
+    public float MultipleSpeed = 1;
    public GameManager()
    {
     Instance = this;

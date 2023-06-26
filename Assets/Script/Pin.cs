@@ -29,9 +29,14 @@ public class Pin : MonoBehaviour
      {
         if (other.CompareTag("BigCircle"))
         {
+            BigCircle bigCircle = other.GetComponent<BigCircle>();
             SpriteRenderer.enabled = true;
             transform.SetParent(other.transform);
-             other.GetComponent<BigCircle>().UpdateText();
+            
+             bigCircle.UpdateText();
+             bigCircle.AddSpeed();
+
+
             if (GameManager.Instance.IsGameFinished)
             {
              GameManager.Instance.WinGame();
